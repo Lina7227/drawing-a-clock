@@ -5,82 +5,6 @@ import { Stage, Layer, Line } from "react-konva";
 function Canvas(props) {
 
 
-
-
-    // const canvasRef = useRef(null);
-    // const contexRef = useRef(null);
-    // const [isPaint, setIsPaint] = useState(false);
-    
-    
-    // useEffect(() => {
-    //     const canvas = canvasRef.current
-    //     // canvas.width = window.innerWidth;
-    //     // canvas.height = window.innerHeight;
-    //     // canvas.style.width = `${window.innerWidth}px`;
-    //     // canvas.style.height = `${window.innerHeight}px`;
-    //     canvas.fillRect(10, 10, 150, 100);
-
-    //     const context = canvas.getContext("2d");
-    //     context.scale(2,2);
-    //     context.lineCap = "round";
-    //     context.strokeStyle = "black";
-    //     context.lineWidth = 5;
-    //     contexRef.current = context;
-    
-    // }, [])
-
-    // const startPaint = ({nativeEvent}) => {
-    //     const {offsetX, offsetY} = nativeEvent;
-
-    //     contexRef.current.beginPath();
-    //     contexRef.current.moveTo(offsetX, offsetY);
-    //     setIsPaint(true);
-    // }
-  
-    // const endPaint = () => {
-    //     contexRef.current.closePath();
-    //     setIsPaint(false);
-    // }
-
-  
-    // const paint = ({nativeEvent}) => {
-
-    //     if (isPaint){
-    //         const {offsetX, offsetY} = nativeEvent;
-
-    //         contexRef.current.lineTo(offsetX, offsetY);
-    //         contexRef.current.stroke();
-    //     }
-        
-    // }
-    
-    // const [currentLine, setCurrentLine] = useState(null);
-    // const [lines, setLines] = useState([]);
-  
-    // const onMouseDown = () => {
-    //   const { x, y } = getScaledPoint(stage, 1);
-    //   setCurrentLine({ points: [x, y] });
-    // };
-  
-    // const onMouseMove = () => {
-    //   if (currentLine) {
-    //     const { x, y } = getScaledPoint(stage, 1);
-    //     setCurrentLine({
-    //       ...currentLine,
-    //       points: [...currentLine.points, x, y]
-    //     });
-    //   }
-    // };
-    // const onMouseUp = () => {
-    //   const { x, y } = getScaledPoint(stage, 1);
-    //   setCurrentLine(null);
-    //   setLines([
-    //     ...lines,
-    //     { ...currentLine, points: [...currentLine.points, x, y] }
-    //   ]);
-    // };
-
-
     const [tool, setTool] = React.useState('pen');
     const [lines, setLines] = React.useState([]);
     const isDrawing = React.useRef(false);
@@ -105,9 +29,10 @@ function Canvas(props) {
         // replace last
         lines.splice(lines.length - 1, 1, lastLine);
         setLines(lines.concat());
+   
     };
     
-      const handleMouseUp = () => {
+    const handleMouseUp = () => {
         isDrawing.current = false;
     };
 
@@ -145,16 +70,6 @@ function Canvas(props) {
                 
             </Layer>
         </Stage>
-
-        <select 
-            className="canva__menu"
-            value={tool}
-            onChange={(e) => {
-            setTool(e.target.value);
-            }}
-        >
-            <option value="indicator">Indicator</option>
-        </select>
 
         </>
 

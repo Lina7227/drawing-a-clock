@@ -1,5 +1,4 @@
 import React from 'react';
-import Canvas from './Canvas';
 
 
 function Main(props) {
@@ -10,11 +9,11 @@ function Main(props) {
     //     setListName(evt.target.value);
     // }
 
-    // React.useEffect(() => {
-    //     setListName('');
-    // }, [])
+    React.useEffect(() => {
+        setListName('');
+    }, [])
 
-    function handleClick(evt) {
+    function handleClick() {
 
         props.onAddFile ({
             listName
@@ -23,41 +22,10 @@ function Main(props) {
 
     }
 
-    // const saveFile = async (blob) => {
-    //     const a = document.createElement('a');
-    //     a.download = 'my-file.png';
-    //     a.href = URL.createObjectURL(blob);
-    //     a.addEventListener('click', (e) => {
-    //       setTimeout(() => URL.revokeObjectURL(a.href), 30 * 1000);
-    //     });
-    //     a.click();
-    //   };
-      
-      
-      
-    //   const canvas = Canvas;
-    //   const blob = new Blob([JSON.stringify(canvas)], {type : 'application/json'});
-      
-    //   saveFile(blob);
-
-    // const canvas = Canvas;
-   
-    
-    // const now = new Date().toLocaleTimeString();
-    // const canvasName = now;
-
-    // localStorage.setItem(canvasName, canvas.toDataURL());
-
-    // const dataURL = localStorage.getItem(canvasName);
-    // const img = new Image;
-    // img.src = dataURL;
-    // img.onload = function () {
-    //     canvas.drawImage(img, 0, 0);
-    // };
-
    
 
     return (
+        <>
         <main className="content">
             
             <section className="promo">
@@ -76,9 +44,12 @@ function Main(props) {
                 </div>
 
                 <ul className="list">
-                    {props.lists.map(() => (
+                    {props.lists.map((index) => (
                         
-                        <li  className="list__item">новая картинка</li>
+                        <li 
+                            key={index}
+                            className="list__item"
+                        >новая картинка</li>
                     ))}
 
                 </ul>
@@ -86,6 +57,8 @@ function Main(props) {
 
 
         </main>
+
+        </>
     );
 }
 
