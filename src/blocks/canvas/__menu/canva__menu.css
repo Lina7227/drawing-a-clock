@@ -1,0 +1,8 @@
+.canva__menu {
+    margin: 20px auto 0 20%;
+    padding: 0;
+    text-align: center;
+    border-radius: 18px;
+    border: 2px solid #000;
+    width: 115px;
+}

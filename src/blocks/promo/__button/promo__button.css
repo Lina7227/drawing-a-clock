@@ -1,0 +1,19 @@
+.promo__button {
+    margin: 0;
+    width: 151px;
+    height: 40px;
+    background-color: #0008D1;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: center;
+    font-weight: 700;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 2s;
+}
+
+.promo__button:hover {
+    opacity: 0.5;
+}

@@ -1,0 +1,11 @@
+.list__item {
+    margin: 0;
+    padding: 0;
+    color: #0094FF;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration: underline;
+    font-weight: 400;
+    list-style-type: none;
+    width: 639px;
+}

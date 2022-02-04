@@ -1,0 +1,16 @@
+.canvas {
+    position: fixed;
+    top: 110px;
+    left: calc((100vw - 639px)/ 2);
+    margin: 0 auto;
+    width: 639px;
+    height: 385px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .0);
+    background-image: url('../../images/watch.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 999;
+    cursor: url('../../images/str.png') 4 4, pointer;
+}
